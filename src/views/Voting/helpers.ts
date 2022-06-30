@@ -35,7 +35,7 @@ export interface Message {
   sig: string
 }
 
-const STRATEGIES = [{ name: 'cake', params: { symbol: 'CAKE', address: tokens.cake.address, decimals: 18, max: 300 } }]
+const STRATEGIES = [{ name: 'megg', params: { symbol: 'MEGG', address: tokens.megg.address, decimals: 18, max: 300 } }]
 const NETWORK = '56'
 
 /**

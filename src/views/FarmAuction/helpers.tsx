@@ -8,8 +8,7 @@ import { ethersToBigNumber } from 'utils/bigNumber'
 import { FarmAuction } from 'config/abi/types'
 import orderBy from 'lodash/orderBy'
 
-export const FORM_ADDRESS =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfQNsAfh98SAfcqJKR3is2hdvMRdnvfd2F3Hql96vXHgIi3Bw/viewform'
+export const FORM_ADDRESS = 'https://docs.metaegg.io'
 
 // Sorts bidders received from smart contract by bid amount in descending order (biggest -> smallest)
 // Also amends bidder information with getBidderInfo

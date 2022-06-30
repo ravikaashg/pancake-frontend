@@ -45,7 +45,7 @@ import {
   Erc20Bytes32,
   Multicall,
   Weth,
-  Cake,
+  Megg,
   Erc721collection,
   CakeVaultV2,
   CakeFlexibleSideVaultV2,
@@ -104,7 +104,7 @@ export const useERC721 = (address: string, withSignerIfPossible = true) => {
   return useMemo(() => getErc721Contract(address, signer), [address, signer])
 }
 
-export const useCake = (): { reader: Cake; signer: Cake } => {
+export const useCake = (): { reader: Megg; signer: Megg } => {
   const { account, library } = useActiveWeb3React()
   return useMemo(
     () => ({

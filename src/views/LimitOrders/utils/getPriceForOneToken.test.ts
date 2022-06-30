@@ -1,7 +1,7 @@
 import { JSBI, Token, TokenAmount } from '@pancakeswap/sdk'
 import getPriceForOneToken from './getPriceForOneToken'
 
-const CAKE = new Token(56, '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', 18, 'CAKE', 'PancakeSwap Token')
+const MEGG = new Token(56, '0x39Af062b155978f1D41B299601DeFac54E94Cbd8', 18, 'MEG', 'Metaegg DeFi')
 const BUSD = new Token(56, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
 const DOGE = new Token(56, '0xbA2aE424d960c26247Dd6c32edC70B295c744C43', 8, 'DOGE', 'Binance-Peg Dogecoin')
 
@@ -15,16 +15,16 @@ const FIVE_EIGHT_DEC = JSBI.multiply(JSBI.BigInt(5), EIGHT_DECIMALS)
 
 describe('limitOrders/utils/getPriceForOneToken', () => {
   describe.each([
-    [new TokenAmount(CAKE, ONE), new TokenAmount(BUSD, ONE), '1'],
-    [new TokenAmount(CAKE, FIVE), new TokenAmount(BUSD, FIVE), '1'],
-    [new TokenAmount(CAKE, ONE), new TokenAmount(BUSD, FIVE), '5'],
-    [new TokenAmount(CAKE, FIVE), new TokenAmount(BUSD, ONE), '0.2'],
+    [new TokenAmount(MEGG, ONE), new TokenAmount(BUSD, ONE), '1'],
+    [new TokenAmount(MEGG, FIVE), new TokenAmount(BUSD, FIVE), '1'],
+    [new TokenAmount(MEGG, ONE), new TokenAmount(BUSD, FIVE), '5'],
+    [new TokenAmount(MEGG, FIVE), new TokenAmount(BUSD, ONE), '0.2'],
     [new TokenAmount(DOGE, ONE_EIGHT_DEC), new TokenAmount(BUSD, ONE), '1'],
     [new TokenAmount(DOGE, FIVE_EIGHT_DEC), new TokenAmount(BUSD, FIVE), '1'],
     [new TokenAmount(DOGE, ONE_EIGHT_DEC), new TokenAmount(BUSD, FIVE), '5'],
     [new TokenAmount(DOGE, FIVE_EIGHT_DEC), new TokenAmount(BUSD, ONE), '0.2'],
-    [new TokenAmount(CAKE, ZERO), new TokenAmount(BUSD, ONE), undefined],
-    [new TokenAmount(CAKE, ONE), new TokenAmount(BUSD, ZERO), undefined],
+    [new TokenAmount(MEGG, ZERO), new TokenAmount(BUSD, ONE), undefined],
+    [new TokenAmount(MEGG, ONE), new TokenAmount(BUSD, ZERO), undefined],
   ])(`returns correct price`, (input, output, expected) => {
     it(`for ${input.toSignificant(6)} ${input.currency.symbol} -> ${output.toSignificant(6)} ${
       output.currency.symbol

@@ -11,10 +11,10 @@ export default {
     chainlinkOracleAddress: getAddress(addresses.chainlinkOracle),
     token: tokens.bnb,
   },
-  CAKE: {
+  MEGG: {
     address: getAddress(addresses.predictionsCAKE),
     api: GRAPH_API_PREDICTION_CAKE,
     chainlinkOracleAddress: getAddress(addresses.chainlinkOracleCAKE),
-    token: tokens.cake,
+    token: tokens.megg,
   },
 }

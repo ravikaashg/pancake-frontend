@@ -3,13 +3,13 @@
  */
 const tokens = {
   cake: {
-    symbol: "CAKE",
+    symbol: "MEGG",
     address: {
-      56: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
-      97: "0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe",
+      56: "0x39Af062b155978f1D41B299601DeFac54E94Cbd8",
+      97: "",
     },
     decimals: 18,
-    projectLink: "https://pancakeswap.finance/",
+    projectLink: "https://metaegg.finance/",
   },
   txl: {
     symbol: "TXL",

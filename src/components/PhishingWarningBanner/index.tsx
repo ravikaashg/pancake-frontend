@@ -9,11 +9,14 @@ const Container = styled(Flex)`
   height: 100%;
   padding: 12px;
   align-items: center;
-  background: linear-gradient(0deg, rgba(39, 38, 44, 0.4), rgba(39, 38, 44, 0.4)),
-    linear-gradient(180deg, #8051d6 0%, #492286 100%);
+  background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 0px;
-    background: linear-gradient(180deg, #8051d6 0%, #492286 100%);
+    background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
+      linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+      linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
   }
 `
 
@@ -25,9 +28,9 @@ const InnerContainer = styled(Flex)`
 `
 
 const SpeechBubble = styled.div`
-  background: rgba(39, 38, 44, 0.4);
+  background: rgba(39, 38, 44, 0.5);
   border-radius: 16px;
-  padding: 8px;
+  padding: 15px;
   width: 60%;
   height: 80%;
   display: flex;
@@ -35,8 +38,8 @@ const SpeechBubble = styled.div`
   flex-wrap: wrap;
 
   & ${Text} {
-    flex-shrink: 0;
-    margin-right: 4px;
+    flex-shrink: 10;
+    margin-right: 10px;
   }
 `
 
@@ -45,8 +48,8 @@ const PhishingWarningBanner: React.FC = () => {
   const [, hideBanner] = usePhishingBannerManager()
   const { isMobile, isMd } = useMatchBreakpointsContext()
   const warningTextAsParts = useMemo(() => {
-    const warningText = t("please make sure you're visiting https://pancakeswap.finance - check the URL carefully.")
-    return warningText.split(/(https:\/\/pancakeswap.finance)/g)
+    const warningText = t("please make sure you're visiting https://metaegg.finance - check the URL carefully.")
+    return warningText.split(/(https:\/\/metaegg.finance)/g)
   }, [t])
   const warningTextComponent = (
     <>
@@ -59,8 +62,8 @@ const PhishingWarningBanner: React.FC = () => {
           key={i}
           small
           as="span"
-          bold={text === 'https://pancakeswap.finance'}
-          color={text === 'https://pancakeswap.finance' ? '#FFFFFF' : '#BDC2C4'}
+          bold={text === 'https://metaegg.finance'}
+          color={text === 'https://metaegg.finance' ? '#FFFFFF' : '#BDC2C4'}
         >
           {text}
         </Text>
@@ -80,9 +83,9 @@ const PhishingWarningBanner: React.FC = () => {
         <>
           <InnerContainer>
             <picture>
-              <source type="image/webp" srcSet="/images/decorations/phishing-warning-bunny.webp" />
-              <source type="image/png" srcSet="/images/decorations/phishing-warning-bunny.png" />
-              <img src="/images/decorations/phishing-warning-bunny.png" alt="phishing-warning" width="92px" />
+              <source type="image/webp" srcSet="/images/decorations/phishing-warning.webp" />
+              <source type="image/png" srcSet="/images/decorations/phishing-warning.png" />
+              <img src="/images/decorations/phishing-warning.png" alt="phishing-warning" width="82px" />
             </picture>
             <SpeechBubble>{warningTextComponent}</SpeechBubble>
           </InnerContainer>

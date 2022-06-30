@@ -22,13 +22,13 @@ export const mainnetTokens = defineTokens({
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
-  cake: new Token(
+  megg: new Token(
     MAINNET,
-    '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+    '0x39Af062b155978f1D41B299601DeFac54E94Cbd8',
     18,
-    'CAKE',
-    'PancakeSwap Token',
-    'https://pancakeswap.finance/',
+    'MEGG',
+    'Metaegg DeFi',
+    'https://metaegg.finance/',
   ),
   gmi: new Token(MAINNET, '0x93D8d25E3C9A847a5Da79F79ecaC89461FEcA846', 18, 'GMI', 'Gamifi', 'https://gamifi.gg/'),
   tlos: new Token(MAINNET, '0xb6C53431608E626AC81a9776ac3e999c5556717c', 18, 'TLOS', 'Telos', 'https://www.telos.net/'),
@@ -1879,7 +1879,14 @@ export const mainnetTokens = defineTokens({
     'Singularity Dao',
     'https://app.singularitydao.ai/',
   ),
-  antex: new Token(MAINNET, '0xCA1aCAB14e85F30996aC83c64fF93Ded7586977C', 8, 'ANTEX', 'Antex', 'https://antex.org/'),
+  fgg: new Token(
+    MAINNET,
+    '0xF088a8c4e68990C29E538Ee3368CEc8a93E11DfD',
+    8,
+    'FGG',
+    'Future Gaming',
+    'https://metaegg.io/',
+  ),
   bbt: new Token(
     MAINNET,
     '0xD48474E7444727bF500a32D5AbE01943f3A59A64',
@@ -2112,14 +2119,6 @@ export const mainnetTokens = defineTokens({
     'PEAKDEFI',
     'https://peakdefi.com/',
   ),
-  nbt: new Token(
-    MAINNET,
-    '0x1D3437E570e93581Bd94b2fd8Fbf202d4a65654A',
-    18,
-    'NBT',
-    'NanoByte Token',
-    'https://www.nanobyte.finance/',
-  ),
 } as const)
 
 export const testnetTokens = defineTokens({
@@ -2131,13 +2130,13 @@ export const testnetTokens = defineTokens({
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
-  cake: new Token(
+  megg: new Token(
     TESTNET,
-    '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    '0x0EC5fB91dA5A2F5281Ee85f7168E88E1Fcd64273',
     18,
-    'CAKE',
-    'PancakeSwap Token',
-    'https://pancakeswap.finance/',
+    'MEGG',
+    'Metaegg Token',
+    'https://metaegg.finance/',
   ),
   busd: new Token(
     TESTNET,
@@ -2166,8 +2165,10 @@ export const testnetTokens = defineTokens({
 } as const)
 
 const tokens = () => {
+  const chainId = CHAIN_ID
+
   // If testnet - return list comprised of testnetTokens wherever they exist, and mainnetTokens where they don't
-  if (parseInt(CHAIN_ID, 10) === ChainId.TESTNET) {
+  if (parseInt(chainId, 10) === ChainId.TESTNET) {
     return Object.keys(mainnetTokens).reduce((accum, key) => {
       return { ...accum, [key]: testnetTokens[key] || mainnetTokens[key] }
     }, {} as typeof testnetTokens & typeof mainnetTokens)

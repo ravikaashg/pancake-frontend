@@ -21,12 +21,12 @@ const priceHelperLps: SerializedFarmConfig[] = [
   },
   {
     pid: null,
-    lpSymbol: 'ANTEX-BUSD LP',
+    lpSymbol: 'FGG-BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0x4DcB7b3b0E8914DC0e6D366521604cD23E7991E1',
+      56: '0xF088a8c4e68990C29E538Ee3368CEc8a93E11DfD',
     },
-    token: tokens.antex,
+    token: tokens.fgg,
     quoteToken: tokens.busd,
   },
 ]
